@@ -1,0 +1,74 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    width: 300vw; /* Large game world */
+    height: 300vh;
+    background-color: #87ceeb; /* Sky background */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-container {
+    position: absolute;
+    width: 300vw;
+    height: 300vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.road {
+    position: absolute;
+    width: 40vw; /* Fixed width for the road */
+    height: 300vh; /* Tall road */
+    background: #1E202D;
+    border-left: 5px solid white;
+    border-right: 5px solid white;
+}
+
+.lane {
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    background: white;
+    top: 0;
+}
+
+.lane-left { left: 25%; }
+.lane-center { left: 50%; }
+.lane-right { left: 75%; }
+
+.car {
+    position: fixed;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 100px;
+    background-color: red;
+    border-radius: 5px;
+}
+
+.obstacle {
+    position: absolute;
+    width: 50px;
+    height: 60px;
+    background-color: black;
+}
+
+/* More obstacles, all within road lanes */
+.obstacle-1 { left: 15vw; top: 10vh; }  /* Left lane */
+.obstacle-2 { left: 33vw; top: 40vh; }  /* Center lane */
+.obstacle-3 { left: 23vw; top: 80vh; }  /* Right lane */
+.obstacle-4 { left: 32vw; top: 120vh; } /* Left lane */
+.obstacle-5 { left: 22vw; top: 150vh; } /* Center lane */
+.obstacle-6 { left: 15vw; top: 190vh; } /* Right lane */
+.obstacle-7 { left: 5vw; top: 230vh; } /* Left lane */
+.obstacle-8 { left: 23vw; top: 270vh; } /* Center lane */
