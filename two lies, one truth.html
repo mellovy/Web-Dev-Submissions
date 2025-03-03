@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Lies and One Truth</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            flex-direction: column;
+        }
+        .box {
+            width: 300px;
+            height: 100px;
+            background-color: red;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">I don't like to read.</div>
+    <div class="box">I'm tall.</div>
+    <div class="box" id="truth">I love the color red.</div>
+
+    <script>
+        let truthBox = document.getElementById("truth");
+
+        truthBox.addEventListener("mouseover", function() {
+            truthBox.style.backgroundColor = "green";
+        });
+
+        truthBox.addEventListener("mouseout", function() {
+            truthBox.style.backgroundColor = "red";
+        });
+    </script>
+</body>
+</html>
