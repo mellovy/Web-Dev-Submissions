@@ -23,14 +23,14 @@
     </table>
 
     <script>
-        let idnum = 10; // Start from post ID 10
+        let idnum = 1; 
 
         document.getElementById("loadbef").addEventListener("click", loadBefore);
         document.getElementById("load5").addEventListener("click", loadFive);
 
         function loadBefore() {
-            let startId = Math.max(idnum - 5, 1); // Ensure ID doesn't go below 1
-            document.getElementById("output-body").innerHTML = ""; // Clear previous data
+            let startId = Math.max(idnum - 5, 1); 
+            document.getElementById("output-body").innerHTML = ""; 
             let requests = [];
             for (let i = 0; i < 5; i++) {
                 if (startId + i > 0) {
@@ -40,11 +40,11 @@
             Promise.all(requests).then(posts => {
                 posts.forEach(data => appendRow(data));
             });
-            idnum = startId; // Update idnum to reflect new start
+            idnum = startId; 
         }
 
         function loadFive() {
-            document.getElementById("output-body").innerHTML = ""; // Clear previous data
+            document.getElementById("output-body").innerHTML = ""; 
             let requests = [];
             for (let i = 0; i < 5; i++) {
                 requests.push(fetch(`https://jsonplaceholder.typicode.com/posts/${idnum + i}`).then(response => response.json()));
@@ -52,7 +52,7 @@
             Promise.all(requests).then(posts => {
                 posts.forEach(data => appendRow(data));
             });
-            idnum += 5; // Increment for next batch
+            idnum += 5; 
         }
 
         function appendRow(data) {
