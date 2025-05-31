@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Movie Watchlist</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div class="app">
+    <div class="header">
+      <div class="container">
+        <div class="marquee">
+          <div class="marquee-border">
+            <div class="marquee-content">
+              <img src="title.png" alt="Title" style="width: 80%; height: auto; display: block; margin: 0 auto;" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-container">
+      <div class="control-panel">
+        <div class="add-movie-form">
+          <input type="text" id="movieTitle" placeholder="Movie title" class="movie-input"/>
+          <button id="addMovieBtn" class="add-btn">Add Movie</button>
+        </div>
+      
+        <div id="searchResults" class="search-results"></div>
+      
+        <div class="search-filter-row">
+          <div class="search-box">
+            <div class="search-icon">🔍</div>
+            <input type="text" id="searchInput" placeholder="Search movies..." class="search-input"/>
+          </div>
+          <div class="category-filter">
+            <select id="categorySelect" class="category-select">
+              <option value="all">All Categories</option>
+              <option value="to-watch">To Watch</option>
+              <option value="watched">Watched</option>
+            </select>
+          </div>
+          
+        </div>
+      </div>
+      
+
+      <div id="moviesGrid" class="movies-grid"></div>
+
+      <div id="emptyState" class="empty-state" style="display: none;">
+        <div class="empty-icon">🎭</div>
+        <p id="emptyMessage" class="empty-message">Add your first movie to get started!</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
